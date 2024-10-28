@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Find the directory where the script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Activate the virtual environment
+source "$SCRIPT_DIR/zxcvbn_env/bin/activate"
+
+# Run the Python script
+"$SCRIPT_DIR/zxcvbn_env/bin/python3" "$SCRIPT_DIR/pwstrength.py" "$@"
+
+# Deactivate the virtual environment
+deactivate
+
